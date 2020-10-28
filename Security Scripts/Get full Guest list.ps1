@@ -1,0 +1,1 @@
+Get-AzureADUser -Filter "UserType eq 'Guest'" -All $true
