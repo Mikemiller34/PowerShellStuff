@@ -1,0 +1,8 @@
+Create registry key:
+HKLM\SOFTWARE\Policies\Google\Chrome\BackgroundModeEnabled
+REG_DWORD Value:0
+
+PS Script:
+
+Set-Location HKLM:
+New-Item -Path .\SOFTWARE\Policies\Google\Chrome -Name BackgroundModeEnabled -Value 0 -Type DWord
