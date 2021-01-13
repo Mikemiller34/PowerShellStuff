@@ -45,13 +45,13 @@ Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/n
 ***All Commands***
 
 Connect-ExchangeOnline
-Get-MessageTrace -SenderAddress noreply@strategyman.com -StartDate 10/14/2020 -EndDate 10/15/2020
+Get-MessageTrace -SenderAddress kiyoshi@asano-agency.com -StartDate 01/12/2021 -EndDate 01/14/2021
 Connect-IPPSSession
-New-ComplianceSearch -Name FakeMSFTEmail -ExchangeLocation All -ContentMatchQuery '(From:noreply@strategyman.com) AND (Subject:Today Expiration Date)'
-Start-ComplianceSearch -Identity "FakeMSFTEmail"
-Get-ComplianceSearch -Identity "FakeMSFTEmail"
-New-ComplianceSearchAction -SearchName "FakeMSFTEmail"  -Purge -PurgeType HardDelete
-New-ComplianceSearchAction -SearchName "FakeMSFTEmail"  -Preview
+New-ComplianceSearch -Name PwdResetKP -ExchangeLocation All -ContentMatchQuery '(From:kiyoshi@asano-agency.com) AND (Subject:Password Report for Pacers at January 13, 2021, 7:17:40 AM {ugnPW})'
+Start-ComplianceSearch -Identity "PwdResetKP"
+Get-ComplianceSearch -Identity "PwdResetKP"
+New-ComplianceSearchAction -SearchName "PwdResetKP"  -Purge -PurgeType HardDelete
+New-ComplianceSearchAction -SearchName "PwdResetKP"  -Preview
 
 
 FULL EXAMPLE:
@@ -92,43 +92,43 @@ Received              Sender Address    Recipient Address       Subject         
 
 PS C:\Users\Mike> Connect-IPPSSession
 WARNING: Your connection has been redirected to the following URI: "https://nam02b.ps.compliance.protection.outlook.com/Powershell-LiveId?BasicAuthToOAuthConversion=true;PSVersion=5.1.19041.1"
-PS C:\Users\Mike> New-ComplianceSearch -Name FakeMSFTEmail -ExchangeLocation All -ContentMatchQuery '(From:willst@otelco.net) AND (Subject:Message: ##03:42 AM, October 05, 2020##,)'
+PS C:\Users\Mike> New-ComplianceSearch -Name PwdResetKP -ExchangeLocation All -ContentMatchQuery '(From:willst@otelco.net) AND (Subject:Message: ##03:42 AM, October 05, 2020##,)'
 
 Name                  RunBy JobEndTime Status    
 ----                  ----- ---------- ------
-FakeMSFTEmail                  NotStarted
+PwdResetKP                  NotStarted
 
 
-PS C:\Users\Mike> Start-ComplianceSearch -Identity "FakeMSFTEmail"
-PS C:\Users\Mike> Get-ComplianceSearch -Identity "FakeMSFTEmail"
+PS C:\Users\Mike> Start-ComplianceSearch -Identity "PwdResetKP"
+PS C:\Users\Mike> Get-ComplianceSearch -Identity "PwdResetKP"
 
 Name                  RunBy        JobEndTime Status    
 ----                  -----        ---------- ------
-FakeMSFTEmail Miller, Mike            InProgress
+PwdResetKP Miller, Mike            InProgress
 
 
-PS C:\Users\Mike> Get-ComplianceSearch -Identity "FakeMSFTEmail"
+PS C:\Users\Mike> Get-ComplianceSearch -Identity "PwdResetKP"
 
 Name                  RunBy        JobEndTime             Status   
 ----                  -----        ----------             ------
-FakeMSFTEmail Miller, Mike 10/10/2020 12:26:21 AM Completed
+PwdResetKP Miller, Mike 10/10/2020 12:26:21 AM Completed
 
 
-PS C:\Users\Mike> New-ComplianceSearchAction -SearchName "FakeMSFTEmail"  -Purge -PurgeType HardDelete
+PS C:\Users\Mike> New-ComplianceSearchAction -SearchName "PwdResetKP"  -Purge -PurgeType HardDelete
 
 
 Confirm
 Are you sure you want to perform this action?
-This operation will make message items meeting the criteria of the compliance search "FakeMSFTEmail" completely inaccessible to users. There is no automatic 
+This operation will make message items meeting the criteria of the compliance search "PwdResetKP" completely inaccessible to users. There is no automatic 
  method to undo the removal of these message items.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [?] Help (default is "Y"): A
 
 Name                        SearchName            Action RunBy        JobEndTime Status  
 ----                        ----------            ------ -----        ---------- ------
-FakeMSFTEmail_Purge FakeMSFTEmail Purge  Miller, Mike            Starting
+PwdResetKP_Purge PwdResetKP Purge  Miller, Mike            Starting
 
-PS C:\Users\Mike> New-ComplianceSearchAction -SearchName "FakeMSFTEmail"  -Preview
-Unable to execute the task. Reason: The search "FakeMSFTEmail" didn't return any results. Please update the search results or edit the query and run the     
+PS C:\Users\Mike> New-ComplianceSearchAction -SearchName "PwdResetKP"  -Preview
+Unable to execute the task. Reason: The search "PwdResetKP" didn't return any results. Please update the search results or edit the query and run the     
 search again.
     + CategoryInfo          : WriteError: (:) [New-ComplianceSearchAction], ComplianceJobTaskException
    nceJobTaskException] D8E2E95F,Microsoft.Office.ComplianceJob.Tasks.NewComplianceSearchAction
