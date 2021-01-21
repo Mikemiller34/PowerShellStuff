@@ -7,6 +7,11 @@ Install-Module ExchangeOnlineManagement
 
 >> Connect-ExchangeOnline
 
+//Block the malicious sender and their domain
+Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/set-hostedcontentfilterpolicy?view=exchange-ps
+
+>> Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add="SenderAddress"} -BlockedSenderDomains @{Add="SenderDomain"}
+
 //To trace an email ***Defualt will search only previous 48 hours. Add startdate and enddate filters to go further back***
 Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/get-messagetrace?view=exchange-ps
 
@@ -44,6 +49,7 @@ Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/n
 ***All Commands***
 
 Connect-ExchangeOnline
+Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add="kiyoshi@asano-agency.com"} -BlockedSenderDomains @{Add="asano-agency.com"}
 Get-MessageTrace -SenderAddress kiyoshi@asano-agency.com -StartDate 01/12/2021 -EndDate 01/14/2021
 Connect-IPPSSession
 New-ComplianceSearch -Name PwdResetKP -ExchangeLocation All -ContentMatchQuery '(From:kiyoshi@asano-agency.com) AND (Subject:Password Report for Pacers at January 13, 2021, 7:17:40 AM {ugnPW})'
