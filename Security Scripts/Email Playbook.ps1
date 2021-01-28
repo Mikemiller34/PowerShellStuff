@@ -49,11 +49,11 @@ Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/n
 ***All Commands***
 
 Connect-ExchangeOnline
-Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add="kiyoshi@asano-agency.com"} -BlockedSenderDomains @{Add="asano-agency.com"}
-Get-MessageTrace -SenderAddress kiyoshi@asano-agency.com -StartDate 01/12/2021 -EndDate 01/14/2021
+Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add="rgolding@goldinglaw.net"} -BlockedSenderDomains @{Add="goldinglaw.net"}
+Get-MessageTrace -SenderAddress rgolding@goldinglaw.net -StartDate 01/21/2021 -EndDate 01/23/2021
 Connect-IPPSSession
-New-ComplianceSearch -Name PwdResetKP -ExchangeLocation All -ContentMatchQuery '(From:kiyoshi@asano-agency.com) AND (Subject:Password Report for Pacers at January 13, 2021, 7:17:40 AM {ugnPW})'
-Start-ComplianceSearch -Identity "PwdResetKP"
-Get-ComplianceSearch -Identity "PwdResetKP"
-New-ComplianceSearchAction -SearchName "PwdResetKP"  -Purge -PurgeType HardDelete
-New-ComplianceSearchAction -SearchName "PwdResetKP"  -Preview
+New-ComplianceSearch -Name eFaxJJohnsonFSI -ExchangeLocation All -ContentMatchQuery '(From:rgolding@goldinglaw.net) AND (Subject:Notification: from 185895433)'
+Start-ComplianceSearch -Identity "eFaxJJohnsonFSI"
+Get-ComplianceSearch -Identity "eFaxJJohnsonFSI"
+New-ComplianceSearchAction -SearchName "eFaxJJohnsonFSI"  -Purge -PurgeType HardDelete
+New-ComplianceSearchAction -SearchName "eFaxJJohnsonFSI"  -Preview
