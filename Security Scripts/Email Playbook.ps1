@@ -49,11 +49,11 @@ Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/n
 ***All Commands***
 
 Connect-ExchangeOnline
-Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add="rgolding@goldinglaw.net"} -BlockedSenderDomains @{Add="goldinglaw.net"}
-Get-MessageTrace -SenderAddress rgolding@goldinglaw.net -StartDate 01/21/2021 -EndDate 01/23/2021
+Set-HostedContentFilterPolicy -Identity "Policy Name" -BlockedSenders @{Add="SenderEmailAddress"} -BlockedSenderDomains @{Add="Domain"}
+Get-MessageTrace -SenderAddress "SenderEmailAddress" -StartDate "DayBeforeReceipt" -EndDate "DayAfterReceipt"
 Connect-IPPSSession
-New-ComplianceSearch -Name eFaxJJohnsonFSI -ExchangeLocation All -ContentMatchQuery '(From:rgolding@goldinglaw.net) AND (Subject:Notification: from 185895433)'
-Start-ComplianceSearch -Identity "eFaxJJohnsonFSI"
-Get-ComplianceSearch -Identity "eFaxJJohnsonFSI"
-New-ComplianceSearchAction -SearchName "eFaxJJohnsonFSI"  -Purge -PurgeType HardDelete
-New-ComplianceSearchAction -SearchName "eFaxJJohnsonFSI"  -Preview
+New-ComplianceSearch -Name "ComplianceSearchName" -ExchangeLocation All -ContentMatchQuery '(From:"SenderEmailAddress") AND (Subject:"EmailSubject")'
+Start-ComplianceSearch -Identity "ComplianceSearchName"
+Get-ComplianceSearch -Identity "ComplianceSearchName"
+New-ComplianceSearchAction -SearchName "ComplianceSearchName"  -Purge -PurgeType HardDelete
+New-ComplianceSearchAction -SearchName "ComplianceSearchName"  -Preview
