@@ -1,13 +1,13 @@
-//Trace an email, create a compliance search, and hard delete the email
-//If not already installed, install the following module:
+// Trace an email, create a compliance search, and hard delete the email
+// If not already installed, install the following module:
 
 Install-Module ExchangeOnlineManagement
 
-//Connect to the Exchange Admin Center
+// Connect to the Exchange Admin Center
 
 >> Connect-ExchangeOnline
 
-//Block the malicious sender and their domain
+// Block the malicious sender and their domain
 Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/set-hostedcontentfilterpolicy?view=exchange-ps
 
 >> Set-HostedContentFilterPolicy -Identity Default -BlockedSenders @{Add="SenderAddress"} -BlockedSenderDomains @{Add="SenderDomain"}
