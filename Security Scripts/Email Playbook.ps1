@@ -51,9 +51,14 @@ Available Filters: https://docs.microsoft.com/en-us/powershell/module/exchange/n
 Connect-ExchangeOnline
 Set-HostedContentFilterPolicy -Identity "Policy Name" -BlockedSenders @{Add="SenderEmailAddress"} -BlockedSenderDomains @{Add="Domain"}
 Get-MessageTrace -SenderAddress "SenderEmailAddress" -StartDate "DayBeforeReceipt" -EndDate "DayAfterReceipt"
+//
 Connect-IPPSSession
 New-ComplianceSearch -Name "ComplianceSearchName" -ExchangeLocation All -ContentMatchQuery '(From:"SenderEmailAddress") AND (Subject:"EmailSubject")'
 Start-ComplianceSearch -Identity "ComplianceSearchName"
+//
 Get-ComplianceSearch -Identity "ComplianceSearchName"
+//
 New-ComplianceSearchAction -SearchName "ComplianceSearchName"  -Purge -PurgeType HardDelete
+//
 New-ComplianceSearchAction -SearchName "ComplianceSearchName"  -Preview
+//
