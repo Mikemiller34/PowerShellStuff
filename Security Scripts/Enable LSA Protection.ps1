@@ -7,5 +7,5 @@ Type: DWord
 Value: 1
 
 Script:
-Set-Locations HKLM:
+Set-Location HKLM:
 New-Item -Path .\SYSTEM\CurrentControlSet\Control\LSA -Name RunAsPPL -Value 1 -Type DWord
