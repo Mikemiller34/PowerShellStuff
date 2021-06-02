@@ -1,0 +1,7 @@
+Install
+
+    Deploy-Application.exe -DeploymentType "Install" -DeployMode "Silent"
+
+ Uninstall
+
+    Deploy-Application.exe -DeploymentType "Uninstall" -DeployMode "Silent"
