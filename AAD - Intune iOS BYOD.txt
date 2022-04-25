@@ -1,0 +1,5 @@
+# AAD - Intune iOS BYOD
+# AAD - Intune Android BYOD
+# AAD - Intune iOS Enterprise
+# iOS needs MFA Authenticator App 
+# helpdesk@deltadentalri.com
