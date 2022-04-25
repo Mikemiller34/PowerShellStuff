@@ -1,0 +1,1 @@
+Grant-CsTeamsUpgradePolicy -PolicyName UpgradeToTeams -Global
