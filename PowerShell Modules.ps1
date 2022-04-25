@@ -1,35 +1,41 @@
->> Exchange Online Management
+# Exchange Online Management
 
-    >> Install-Module ExchangeOnlineManagement
+>> Install-Module ExchangeOnlineManagement
 
-    >> Connect-ExchangeOnline
+>> Connect-ExchangeOnline
 
->> azuread
+# AzureAD
 
-    >> Install-Module AzureAD
+>> Install-Module AzureAD
 
-    >> Connect-AzureAD
+>> Connect-AzureAD
 
->> Msonline
+# Msonline
 
-    >> Install-Module Msonline
+>> Install-Module Msonline
 
-    >> Connect-MsolService
+>> Connect-MsolService
 
->> Microsoft Teams
+# AIPService
 
-    >> Install-Module MicrosoftTeams
+Install-Module AIPService
 
-    >> Connect-MicrosoftTeams
+Connect-AIPService
 
->> SharePoint Online
+# Microsoft Teams
 
-    >> Install-Module Microsoft.Online.SharePoint.PowerShell
+>> Install-Module MicrosoftTeams
 
-    >> Connect-SPOService
+>> Connect-MicrosoftTeams
 
->> Security and Compliance Center
+# SharePoint Online
 
-    >> No install needed
+>> Install-Module Microsoft.Online.SharePoint.PowerShell
 
-    >> Connect-IPPSSession
+>> Connect-SPOService
+
+# Security and Compliance Center
+
+>> No install needed
+
+>> Connect-IPPSSession
