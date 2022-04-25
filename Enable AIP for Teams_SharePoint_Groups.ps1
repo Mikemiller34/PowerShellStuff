@@ -29,4 +29,4 @@ Connect-IPPSSession
 
 Execute-AzureAdLabelSync
 
-# You should now be able to select
+# You should now be able to select 
